@@ -7,7 +7,9 @@ import { DevCreateComponent } from './components/views/dev/dev-create/dev-create
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'dev',component: DevComponent},
-  {path: 'dev/create', component: DevCreateComponent}
+  {path: 'dev/create', component: DevCreateComponent},
+  {path: 'dev/delete/:id', component: DevComponent},
+  {path: 'dev/update/:id', component: DevCreateComponent}
 ];
 
 @NgModule({
