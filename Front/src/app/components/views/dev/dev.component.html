@@ -1,0 +1,59 @@
+<div class="content">
+  <div class="title">
+    <h3>Person</h3>
+  </div>
+
+  <div class="tablemaster">
+    <button
+      class="mat-elevation-z8"
+      (click)="navegarParaPersonCreate()"
+      mat-button
+    >
+      New Person
+    </button>
+
+    <div class="mat-elevation-z8 content-table">
+      <table class="table" mat-table [dataSource]="dev">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>id</th>
+          <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let row">{{ row.email }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataCadastro">
+          <th mat-header-cell *matHeaderCellDef>Data Cadastro</th>
+          <td mat-cell *matCellDef="let row">{{ row.dataCadastro }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let row">{{ row.status }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let row">
+            <a class="edit" routerLink="update/{{ row.id }}">
+              <i class="material-icons">edit</i>
+            </a>
+            <a class="delete" routerLink="delete/{{ row.id }}" (click)="delete()">
+              <i class="material-icons">delete</i>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </div>
+</div>

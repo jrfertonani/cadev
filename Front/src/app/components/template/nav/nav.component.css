@@ -1,0 +1,22 @@
+.conteiner{
+  height: 85%;
+
+
+}
+
+i {
+  padding-right: .6rem;
+  float: left;
+
+}
+
+
+.material-icons{
+  align-items: center;
+
+}
+
+.mat-sidenav{
+  width: 250px;
+}
+
