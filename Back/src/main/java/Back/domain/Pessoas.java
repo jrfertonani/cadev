@@ -27,8 +27,10 @@ public class Pessoas implements Serializable {
     protected String name;
     protected String email;
 
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-    protected LocalDateTime dataCadastro = LocalDateTime.now();
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    protected LocalDate dataCadastro = LocalDate.now();
 
+   // @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+   // protected LocalDateTime dataCadastro = LocalDateTime.now();
 
 }

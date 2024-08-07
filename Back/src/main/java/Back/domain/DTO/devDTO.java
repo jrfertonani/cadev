@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter     @Setter
 @AllArgsConstructor
@@ -18,8 +20,6 @@ public class devDTO {
     private String name;
     private String email;
 
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-    protected LocalDateTime dataCadastro = LocalDateTime.now();
 
     private Status status;
 }
