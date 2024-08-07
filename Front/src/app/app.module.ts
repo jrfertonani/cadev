@@ -18,12 +18,18 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
+
 import { HomeComponent } from './components/views/home/home.component';
+
 import { DevComponent } from './components/views/dev/dev.component';
 import { DevCreateComponent } from './components/views/dev/dev-create/dev-create.component';
+
+import { TarefasComponent } from './components/views/tarefas/tarefas.component';
+import { TarefasCreateComponent } from './components/views/tarefas/tarefas-create/tarefas-create.component';
 
 
 
@@ -32,11 +38,16 @@ import { DevCreateComponent } from './components/views/dev/dev-create/dev-create
     AppComponent,
     HeaderComponent,
     FooterComponent,
+
     NavComponent,
 
     HomeComponent,
+
     DevComponent,
-    DevCreateComponent
+    DevCreateComponent,
+
+    TarefasComponent,
+    TarefasCreateComponent
   ],
   imports: [
     BrowserModule,

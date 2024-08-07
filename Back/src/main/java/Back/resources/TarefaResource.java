@@ -1,8 +1,8 @@
 package Back.resources;
 
-import Back.domain.DTO.devDTO;
-import Back.domain.Dev;
-import Back.services.DevService;
+import Back.domain.DTO.tarefaDTO;
+import Back.domain.Tarefa;
+import Back.services.TarefaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,17 +14,17 @@ import java.util.List;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/dev")
-public class DevResource {
+@RequestMapping("/tarefas")
+public class TarefaResource {
 
     @Autowired
     private ModelMapper mapper;
-    
+
     @Autowired
-    private DevService service;
+    private TarefaService service;
 
     @PostMapping
-    public ResponseEntity<devDTO> create(@RequestBody devDTO DTO) {
+    public ResponseEntity<tarefaDTO> create(@RequestBody tarefaDTO DTO){
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")
@@ -33,38 +33,36 @@ public class DevResource {
         return ResponseEntity.created(uri).body(DTO);
     }
 
-
-
     @GetMapping
-    public ResponseEntity<List<Dev>> getAll() {
+    public ResponseEntity<List<Tarefa>> findAll(){
         return ResponseEntity.ok().body(
-                service.getAll()
+                service.findAll()
                         .stream().map(
-                             x -> mapper.map(x, Dev.class))
+                        x -> mapper.map(x, Tarefa.class))
                         .toList()
         );
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<devDTO> findById(@PathVariable Integer id){
+    public ResponseEntity<tarefaDTO> findById(@PathVariable Integer id){
         return ResponseEntity.ok().body(
                 mapper.map(
-                        service.findById(id), devDTO.class)
+                        service.findById(id), tarefaDTO.class
+                )
         );
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<devDTO> update(@PathVariable Integer id,
-                                         @RequestBody devDTO DTO){
-        Dev obj = service.update(id, DTO);
+    public ResponseEntity<tarefaDTO> update(@PathVariable Integer id,
+                                            @RequestBody tarefaDTO DTO){
+        Tarefa obj = service.update(id, DTO);
         return ResponseEntity.ok().body(DTO);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id){
+    public ResponseEntity<tarefaDTO> delete(@PathVariable Integer id){
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
-
 
 }

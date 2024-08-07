@@ -3,5 +3,5 @@ export interface Dev{
   name: string,
   email: string,
   dataCadastro?: number ,
-  status: string
+  categoria: string
 }

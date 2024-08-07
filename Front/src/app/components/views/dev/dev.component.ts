@@ -9,7 +9,7 @@ import { Dev } from './dev.module';
   styleUrl: './dev.component.scss'
 })
 export class DevComponent implements OnInit {
-  displayedColumns = ['id', 'name', 'email', 'dataCadastro', 'status', 'actions'];
+  displayedColumns = ['id', 'name', 'email', 'dataCadastro', 'categoria', 'actions'];
 
   dev: Dev[] = [];
 

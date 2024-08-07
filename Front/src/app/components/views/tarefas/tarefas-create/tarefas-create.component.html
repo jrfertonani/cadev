@@ -1,37 +1,37 @@
-<h3>Person</h3>
+<h3>Tarefas</h3>
 
 <form>
   <mat-form-field class="form">
-    <mat-label>Name</mat-label>
+    <mat-label>Title</mat-label>
     <input
       matInput
       type="text"
-      name="name"
-      placeholder="Ex.Jack"
-      [(ngModel)]="dev.name"
+      name="title"
+      placeholder="Ex. Ajustar ..."
+      [(ngModel)]="tarefas.title"
     />
   </mat-form-field>
 
   <mat-form-field class="form">
-    <mat-label>Email</mat-label>
+    <mat-label>Description</mat-label>
     <input
       matInput
       type="text"
-      name="email"
-      placeholder="Ex.email@email.com"
-      [(ngModel)]="dev.email"
+      name="description"
+      placeholder="Ex: Foi ajustado ."
+      [(ngModel)]="tarefas.description"
     />
   </mat-form-field>
 
 
   <mat-form-field class="form">
-    <mat-label>Categoria</mat-label>
+    <mat-label>Status</mat-label>
     <input
       matInput
       type="text"
       name="status"
-      placeholder="Ex.0, 1, 2"
-      [(ngModel)]="dev.categoria"
+      placeholder="Ex. Andamento, Encerrado"
+      [(ngModel)]="tarefas.status"
     />
   </mat-form-field>
 

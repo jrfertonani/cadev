@@ -28,7 +28,7 @@ export class DevCreateComponent implements OnInit {
     name: '',
     email: '',
     dataCadastro: 0,
-    status: ''
+    categoria: ''
   };
 
   save(): void {
